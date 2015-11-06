@@ -1,15 +1,29 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
 
-.carousel-indicators li {
-	background-color: #87FF8E;
 }
 
-.carousel-indicators li.active {
-	background-color: #1D7F23;
+.mycarousel {
+	margin-top: 600px;
+	.carousel-indicators li {
+		background-color: #87FF8E;
 	}
-
-.marketing {
-	margin-top: 2em;
+	.carousel-indicators li.active {
+		background-color: #1D7F23;
+	}
 }
+
+.component-section {
+	text-align: center;
+	padding: 3em;
+	.col-md-6 {	
+		padding: 10px;	
+		.component{	
+			margin: 0.5em;
+			padding: 1em;
+		}
+	}
+}
+

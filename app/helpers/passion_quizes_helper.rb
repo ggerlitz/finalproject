@@ -1,0 +1,2 @@
+module PassionQuizesHelper
+end

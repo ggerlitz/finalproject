@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  goal: MyString
+  motivation: MyText
+  obstacles: MyText
+  values: MyText
+  support: MyText
+  action_plan: MyText
+
+two:
+  goal: MyString
+  motivation: MyText
+  obstacles: MyText
+  values: MyText
+  support: MyText
+  action_plan: MyText
