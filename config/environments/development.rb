@@ -49,4 +49,9 @@ Rails.application.configure do
       :enable_starttls_auto => true 
     }
 
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :bucket => ENV['S3_BUCKET_NAME']
+  }    
+
 end
