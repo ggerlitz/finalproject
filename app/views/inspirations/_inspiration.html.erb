@@ -1,0 +1,20 @@
+<div class="container">
+   <div class="tileContentTop">
+       <h3><%= link_to inspiration.user.full_name, user_path(inspiration.user_id) %></h3>
+   </div>
+   
+   <div class="tileImage">
+       <%= link_to (image_tag inspiration.image.url(:medium)),inspiration %>
+   </div>
+
+   <div class="tileContent">
+       <h4><%= inspiration.title %></h4>
+       <p><%= inspiration.body %></p>
+   </div>
+
+   <div class="editinspiration">
+       <%if current_user and current_user.id == inspiration.user_id %>
+       <%= link_to 'Edit inspiration', edit_inspiration_path(inspiration) %>
+       <%end%>
+   </div> 
+</div>   
