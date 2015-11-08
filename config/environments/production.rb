@@ -85,7 +85,7 @@ Rails.application.configure do
       :user_name => ENV['MANDRILL_USERNAME'],
       :password  => ENV['MANDRILL_APIKEY'], # SMTP password is any valid API key
       :authentication => 'plain', # Mandrill supports 'plain' or 'login'
-      :domain => 'https://zest.herokuapp.com/', # your domain to identify your server when connecting
+      :domain => 'https://sproutly.herokuapp.com/', # your domain to identify your server when connecting
     }  
 
   config.paperclip_defaults = {
