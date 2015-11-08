@@ -19,6 +19,7 @@ class AssessmentsController < ApplicationController
     @assessment = Assessment.new(assessment_params)
     if @assessment.save
       redirect_to current_user, notice: "Assessment completed successfully."
+      UserMailer.welcome_email(current_user).deliver_now
     else
       render :new
     end
