@@ -1,6 +1,6 @@
 <div class="form-style-6"> 
 
-<%= form_for @inspiration, html: { multipart: true } do |f| %>
+<%= form_for @motivation, html: { multipart: true } do |f| %>
 	<p><%= f.label :title, "Upload an Image" %>
 		<%= f.file_field :image, required: true %>
 	</p>

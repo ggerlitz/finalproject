@@ -1,0 +1,9 @@
+	<% @motivation.each do |motivation| %>
+	<div class="tile">
+	     
+	     <div class="tileImage">
+	         <%= link_to (image_tag motivation.image.url(:medium)), motivation %>
+	     </div>
+
+	</div>
+	<% end %>

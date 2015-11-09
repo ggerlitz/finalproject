@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151108175938) do
+ActiveRecord::Schema.define(version: 20151109185432) do
 
   create_table "assessments", force: :cascade do |t|
     t.string   "q1"
@@ -34,7 +34,23 @@ ActiveRecord::Schema.define(version: 20151108175938) do
     t.integer  "user_id"
   end
 
-  create_table "inspirations", force: :cascade do |t|
+  create_table "delayed_jobs", force: :cascade do |t|
+    t.integer  "priority",   default: 0, null: false
+    t.integer  "attempts",   default: 0, null: false
+    t.text     "handler",                null: false
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority"
+
+  create_table "motivations", force: :cascade do |t|
     t.string   "title"
     t.string   "body"
     t.datetime "created_at",         null: false
@@ -44,6 +60,7 @@ ActiveRecord::Schema.define(version: 20151108175938) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "user_id"
+    t.datetime "reminder_frequency"
   end
 
   create_table "users", force: :cascade do |t|
