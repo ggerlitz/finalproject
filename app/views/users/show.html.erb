@@ -5,7 +5,7 @@
       <ul class="nav nav-sidebar">
         <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
         <li><%= link_to "Passions", assessments_path %></li>
-        <li><a href="#">Motivation</a></li>
+        <li><%= link_to "Motivation", motivations_path %></li>
         <li><a href="#">Action Plan</a></li>
       </ul>
     </div><!-- col-sm-3 sidebar -->
@@ -30,7 +30,7 @@
               <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" alt="Generic placeholder image" width="140" height="140">
               <h3>Heading</h3>
               <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-              <%= link_to 'Motivation', root_path, class: "btn btn-default" %>
+              <%= link_to 'Motivation', new_motivation_path, class: "btn btn-default" %>
             </div><!-- /.component -->              
           </div><!-- /.col-lg-6 -->
             <div class="col-md-4">

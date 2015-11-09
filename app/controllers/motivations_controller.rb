@@ -2,6 +2,7 @@ class MotivationsController < ApplicationController
 	before_action :set_motivation, only: [:show, :edit, :update, :destroy]
   def index
   	@motivations = Motivation.all
+    @user = current_user
   end
 
   def new
@@ -11,7 +12,7 @@ class MotivationsController < ApplicationController
   def create
   	@motivation = Motivation.new(motivation_params)
   	if @motivation.save
-  		redirect_to @motivation, notice: "Submitted successfully"
+  		redirect_to motivations_path, notice: "Submitted successfully"
   	else
   		render :new, notice: "There was a problem"
   	end
@@ -26,7 +27,7 @@ class MotivationsController < ApplicationController
   def update
   	@motivation.update(motivation_params)
   	if @motivation.save
-  		redirect_to @motivation, notice: "Your changes were submitted successfully"
+  		redirect_to motivations_path, notice: "Your changes were submitted successfully"
   	else
   		render :edit, notice: "There was a problem"
   	end
