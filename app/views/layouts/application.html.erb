@@ -45,7 +45,7 @@
 	          <div class="navbar-brand">
 	    	      	<%= link_to image_tag("zestlogo2.png"), root_path  %>
     	      		<% if current_user %>
-									<span>Hello <%= current_user.full_name %></span>
+									<span>Hello <%= current_user.first_name %></span>
 								<% end %>
 				    </div>  
 	        </div>
@@ -79,6 +79,8 @@
 	<% end %>
 
 <%= yield %>
+
+
 </div> <!-- container -->
 </body>
 </html>
