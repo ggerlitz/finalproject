@@ -1,20 +1,14 @@
 <div class="container">
-   <div class="tileContentTop">
-       <h3><%= link_to motivation.user.first_name, user_path(motivation.user_id) %></h3>
-   </div>
-   
-   <div class="tileImage">
-       <%= link_to (image_tag motivation.image.url(:medium)),motivation %>
-   </div>
-
-   <div class="tileContent">
-       <h4><%= motivation.title %></h4>
-       <p><%= motivation.body %></p>
-   </div>
-
-   <div class="editmotivation">
-       <%if current_user and current_user.id == motivation.user_id %>
-       <%= link_to 'Edit motivation', edit_motivation_path(motivation) %>
-       <%end%>
-   </div> 
-</div>   
+    <div class="col-md-8 col-md-offset-1">
+        <div class="row featurette">
+          <hr class="featurette-divider">
+          <div class="col-md-7">
+            <h2 class="featurette-heading"><%= link_to(motivation.title, motivation) %></h2>
+            <p class="lead"><%= motivation.body %></p>
+          </div>
+          <div class="col-md-5">
+            <%= image_tag motivation.image.url(:medium) %>
+          </div>
+        </div>
+    </div>        
+</div>

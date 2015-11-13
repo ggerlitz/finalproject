@@ -47,11 +47,6 @@ Rails.application.configure do
       :password  => ENV['MANDRILL_APIKEY'], 
       :authentication => 'plain', 
       :enable_starttls_auto => true 
-    }
-
-  config.paperclip_defaults = {
-    :storage => :s3,
-    :bucket => ENV['S3_BUCKET_NAME']
-  }    
+    } 
 
 end

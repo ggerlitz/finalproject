@@ -1,20 +1,14 @@
 <div class="container">
 	<div class="row">
 
-		<div class="col-sm-8 main">
-			<div class="col-sm-9 col-sm-push-1">
+		<div class="col-md-8 col-md-offset-2">
+			<h1 class="text-center">Explore</h1>
 				<div class="questions">
-					<h1>Find Your Passion</h1>
+					<h3>Describe, in as much detail as possible, where do you see yourself 5 years from now.</h3>
 					<%= render 'form' %>	
 				</div><!-- /questions -->
 			</div><!-- /col-sm-6 -->
 		</div><!-- /col-sm-8 -->	
-
-		<div class="col-sm-4 story">
-			<div class="sidebar">
-				<h1>Success Story</h1>
-			</div><!-- /sidebar -->
-		</div><!-- /col-sm-9 -->	
 
 	</div><!-- /row -->	
 	<%= link_to "Back", user_path(current_user) %>		

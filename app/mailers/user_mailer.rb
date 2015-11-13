@@ -1,10 +1,10 @@
 class UserMailer < ApplicationMailer
 
-	def welcome_email(user)
+	def explore_assessment_email(user)
 		@current_user = user
 		mail(to: user.email,
-				from: "test@zest.com",
-				subject:"EUREKA!",
+				from: "sproutadmin@sprout.com",
+				subject:"Sprout Reminder",
 		)
 	end
 

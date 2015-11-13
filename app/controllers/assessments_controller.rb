@@ -16,17 +16,21 @@ class AssessmentsController < ApplicationController
   end
 
   def create
+    @user = current_user
     @assessment = Assessment.new(assessment_params)
     if @assessment.save
       redirect_to current_user, notice: "Assessment completed successfully."
+      UserMailer.explore_assessment_email(@user).deliver_now
     else
       render :new
     end
   end
 
   def update
+    @user = current_user
     if @assessment.update
       redirect_to @assessment, notice: "Changes succcessfully saved."
+      UserMailer.explore_assessment_email(@user).deliver_now
     else
       render :edit
     end

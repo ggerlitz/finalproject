@@ -21,10 +21,13 @@ body {
 	color: white;
 }
 
-/*p {
-	font-size: 20px;
-}*/
-
+.post {
+	margin-top: 1em;
+	background-color: rgba(0,0,0,0.2);
+	display: inline-block;
+	color: grey;
+	font-size: 1.2em;
+}
 .navbar-brand {
 	padding-top:5px;
 }

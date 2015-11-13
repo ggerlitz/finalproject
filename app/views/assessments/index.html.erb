@@ -1,9 +1,6 @@
 <div class="assessment">
-	<h1><%=current_user.full_name%>'s Passions</h1>
-	<%  @assessments.each do |assessment| %>
-		<p>When I was a kid, I dreamed of <%= assessment.q1 %></p>
-		<p>I can't pass up a book or movie about <%= assessment.q2 %></p>
-	<% end %>
+	<h1>Vision</h1>
+		<p><%= @assessments.last.q1 %></p>
 </div>
 
 <%= link_to "Back", user_path(current_user) %>
