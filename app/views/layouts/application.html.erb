@@ -1,31 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <%= csrf_meta_tags %>
+	<%= favicon_link_tag 'favicon.ico' %>	
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">  
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <title>Sprout</title>  
-	  <link rel="icon" href="../../favicon.ico">  
-		  <!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-	  <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sprout</title>	
+	<%= csrf_meta_tags %>	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
 	<!-- Optional theme -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
-	  <link href="dashboard.css" rel="stylesheet">
-		<link href="carousel.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 
 	<!-- Latest compiled and minified JavaScript -->
-		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>		
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	  <!-- Include all compiled plugins (below), or include individual files as needed -->
-	  <script src="js/bootstrap.min.js"></script>	
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>	
+
 </head>
 <body>
 
@@ -33,7 +27,7 @@
 	<div class="navbar-wrapper">
 	  <div class="container">
 
-	    <nav class="navbar navbar-default navbar-fixed-top">
+	    <nav class="navbar navbar-inverse navbar-fixed-top">
 	      <div class="container">
 	        <div class="navbar-header">
 	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -43,7 +37,7 @@
 	            <span class="icon-bar"></span>
 	          </button>
 	          <div class="navbar-brand">
-	    	      	<%= link_to image_tag("zestlogo2.png"), root_path  %>
+	    	      	<%= link_to image_tag("sproutlogo2.png"), root_path  %>
     	      		<% if current_user %>
 									<span>Hello <%= current_user.first_name %></span>
 								<% end %>
@@ -51,14 +45,10 @@
 	        </div>
 	        <div id="navbar" class="navbar-collapse collapse">
 	          <div class="nav navbar-nav navbar-right">
-	          	<li><%= link_to "Home", root_path %></li>
-	            <% if !current_user %>
-		            <li><a href="#about">About Us</a></li>	            
+	            <% if !current_user %>            
 		            <li><%= link_to "Log In", user_session_path%></li>
-    				    <li><div class="btn btn-primary btn-success">
-			          	<span class="glyphicon glyphicon-leaf"></span> 
-			          	<%= link_to 'Sign Up', new_user_registration_path %>
-			          </div><li>
+    				    <li><%= link_to "Sign Up", new_user_registration_path %>
+			          <li>
 	            <% else %>
 	            	<li><%= link_to "My Profile", user_path(current_user) %></li>
 		            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>

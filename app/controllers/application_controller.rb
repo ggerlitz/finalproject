@@ -15,32 +15,24 @@ class ApplicationController < ActionController::Base
                                                             :sms_frequency,
                                                             :last_email,
                                                             :last_sms,
-                                                            :password
+                                                            :password,
+                                                            :password_confirmation
                                                             ) 
                                               }
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:first_name, 
+                                                                   :last_name, 
+                                                                   :phone, 
+                                                                   :email, 
+                                                                   :email_frequency,
+                                                                   :sms_frequency,
+                                                                   :last_email,
+                                                                   :last_sms,
+                                                                   :password,
+                                                                   :current_password,
+                                                                   :password_confirmation
+                                                                  ) 
+                                                    }                                              
 	end
 
-  def after_sign_in_path_for(resource)
-  	@user
-  end
 
-  def last_email_reminder
-    # last_email_reminder = last_email_sent - Time.now.days 
-  end
-
-  def last_sms_reminder
-    # last_sms_reminder = last_sms_sent - Time.now.days 
-  end
-
-
-
-
-  def email_reminder
-    UserMailer.welcome_email(current_user).deliver_later(wait: 1.week.from_now) 
-    last_email_sent = Time.now
-  end
-
-  # def after_sign_up_path_for(resource)
-  #   new_plan_path
-  # end
 end

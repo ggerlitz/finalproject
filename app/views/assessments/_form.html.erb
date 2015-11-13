@@ -1,60 +1,66 @@
-<%= form_for @assessment do |f| %>
-	<% if @assessment.errors.any? %>
-		<div class="alert">
-		<p>There was a problem:</p>
-		<% @assessment.errors.full_messages.each do |msg| %>
-			<li><%= msg %></li>
+<div class="container">
+	<div class="form">
+		<%= form_for @assessment do |f| %>
+			<% if @assessment.errors.any? %>
+				<div class="notice">
+				<p>There was a problem:</p>
+				<% @assessment.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			<% end %>	
+			<p class="form-group">
+				<%= f.label :q1, "Q: When I was a kid, I dreamed of:" %><br>
+				<%= f.text_field :q1, required: true %>
+			</p>
+
+			<p class="form-group">
+				<%= f.label :q2, "Q: I can't pass up a book or a movie about:" %><br>
+				<%= f.text_field :q2, required: true %>
+			</p>
+
+			<p class="form-group">
+				<%= f.label :q3, "Q: If I play hooky from work for a week I'd spend the time:" %><br><br>
+				<%= f.text_field :q3, required: true %>
+			</p>
+
+			<p class="form-group">
+				<%= f.label :q4, "Q: Most people don't know this about me, but I really enjoy:" %><br>
+				<%= f.text_field :q4, required: true %>
+			</p>
+
+			<p class="form-group">
+				<%= f.label :q5, "Q: I am the go-to person when my friends need help with:" %><br>
+				<%= f.text_field :q5, required: true %>
+			</p>				
+
+			<p class="form-group">
+				<%= f.label :q6, "Q: If I could star in my own how-to TV show, it would be about:" %><br>
+				<%= f.text_field :q6, required: true %>
+			</p>
+
+			<p class="form-group">
+				<%= f.label :q7, "Q: If I were to make a homemade gift, it would involve:" %><br>
+				<%= f.text_field :q7, required: true %>
+			</p>
+
+			<p class="form-group">
+				<%= f.label :q8, "Q: I've tried it only once or twice, but I really enjoy:" %><br>
+				<%= f.text_field :q8, required: true %>
+			</p>
+
+			<p class="form-group">
+				<%= f.label :q9, "Q: The closest I come to a runner's high is when I'm:" %><br>
+				<%= f.text_field :q9, required: true %>
+			</p>
+
+			<p class="form-group">
+				<%= f.label :q10, "Q: If I won first prize in a talent show, it would be for:" %><br>
+				<%= f.text_field :q10, required: true %>
+			</p>
+
+	    <div class="form-group">
+	      <%= f.submit "Submit", class: "btn btn-default" %>
+	    </div>
 		<% end %>
-	<% end %>	
-	<p>
-		<%= f.label :q1, "Q: When I was a kid, I dreamed of:" %>
-		<%= f.text_field :q1, required: true %>
-	</p>
-
-	<p>
-		<%= f.label :q2, "Q: I can't pass up a book or a movie about:" %>
-		<%= f.text_field :q2, required: true %>
-	</p>
-
-	<p>
-		<%= f.label :q3, "Q: If I play hooky from work for a week I'd spend the time:" %>
-		<%= f.text_field :q3, required: true %>
-	</p>
-
-	<p>
-		<%= f.label :q4, "Q: Most people don't know this about me, but I really enjoy:" %>
-		<%= f.text_field :q4, required: true %>
-	</p>
-
-	<p>
-		<%= f.label :q5, "Q: I am the go-to person when my friends need help with:" %>
-		<%= f.text_field :q5, required: true %>
-	</p>				
-
-	<p>
-		<%= f.label :q6, "Q: If I could star in my own how-to TV show, it would be about:" %>
-		<%= f.text_field :q6, required: true %>
-	</p>
-
-	<p>
-		<%= f.label :q7, "Q: If I were to make a homemade gift, it would involve:" %>
-		<%= f.text_field :q7, required: true %>
-	</p>
-
-	<p>
-		<%= f.label :q8, "Q: I've tried it only once or twice, but I really enjoy:" %>
-		<%= f.text_field :q8, required: true %>
-	</p>
-
-	<p>
-		<%= f.label :q9, "Q: The closest I come to a runner's high is when I'm:" %>
-		<%= f.text_field :q9, required: true %>
-	</p>
-
-	<p>
-		<%= f.label :q10, "Q: If I won first prize in a talent show, it would be for:" %>
-		<%= f.text_field :q10, required: true %>
-	</p>
-
-	<p><%= f.submit %></p>
-<% end %>
+	</div>		
+</div>		

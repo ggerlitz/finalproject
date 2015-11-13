@@ -35,25 +35,21 @@
 <hr>
   <h3>Set Your Reminder frequency</h3>
   <h4>Email</h4>
-    <%= radio_button_tag(:email_frequency, 0) %>
-    <%= label_tag(:email_frequency, "Weekly") %><br />
-    <%= radio_button_tag(:email_frequency, 1) %>
-    <%= label_tag(:email_frequency, "Daily") %>
+    <%= f.radio_button(:email_frequency, 1) %>
+    <%= f.label(:email_frequency, "Weekly") %><br />
+    <%= f.radio_button(:email_frequency, 0) %>
+    <%= f.label(:email_frequency, "Daily") %>
   <h4>Text</h4>
-    <%= check_box_tag(:sms_frequency, 0 ) %>
-    <%= label_tag(:sms_frequency, "Sunday") %>
-    <%= check_box_tag(:sms_frequency, 1) %>
-    <%= label_tag(:sms_frequency, "Monday") %>
-    <%= check_box_tag(:sms_frequency, 2) %>
-    <%= label_tag(:sms_frequency, "Tuesday") %>
-    <%= check_box_tag(:sms_frequency, 3) %>
-    <%= label_tag(:sms_frequency, "Wednesday") %>
-    <%= check_box_tag(:sms_frequency, 4) %>
-    <%= label_tag(:sms_frequency, "Thursday") %>
-    <%= check_box_tag(:sms_frequency, 5) %>
-    <%= label_tag(:sms_frequency, "Friday") %> 
-    <%= check_box_tag(:sms_frequency, 6) %>
-    <%= label_tag(:sms_frequency, "Saturday") %>            
+    <%= f.select :sms_frequency, ([
+                                    ["Sunday", 0], 
+                                    ["Monday", 1], 
+                                    ["Tuesday", 2],
+                                    ["Wednesday", 3], 
+                                    ["Thursday", 4], 
+                                    ["Friday", 5],
+                                    ["Saturday", 6]                                    
+                                  ]),{ :multiple => true }
+                                  %>           
 <br>
   <div class="actions">
     <%= f.submit "Update" %>
@@ -61,6 +57,7 @@
 <% end %>
 
 <hr>
+<br>
 <h3>Cancel my account</h3>
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
