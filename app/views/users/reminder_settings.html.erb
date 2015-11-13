@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="form col-md-6 col-md-offset-3">
+    <div class="form col-md-5 col-md-offset-4">
         <%= form_for @user do |f| %>
           <h3>Register Your Phone Number</h3>
 
@@ -8,33 +8,78 @@
               <%= f.label :phone %> <i>(we need your current phone number to send your text reminders)</i>
               <%= f.text_field :phone, class: "form-control" %>
             </div>  
-          <h3>Set Your Reminder frequency</h3>
-          <div class="col-md-6">
+          <h3>Set Your Reminder frequencies</h3>
             <h3>Email</h3>
-              <div class="form-group">
-                <%= f.radio_button(:email_frequency, 1) %>
-                <%= f.label(:email_frequency, "Weekly") %>
-              </div>     
+              <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#weekly_email_modal">Weekly</button>
+              <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#daily_email_modal">Daily</button>
+                <div id="weekly_email_modal" class="modal fade" role="dialog">
+                  <div class="modal-dialog">
 
-              <div class="form-group">
-                <%= f.radio_button(:email_frequency, 0) %>
-                <%= f.label(:email_frequency, "Daily") %>
-              </div>  
-          </div>
-          <div class="col-md-6">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Set Day & Time</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p>Please select the day and time you would like to receive your weekly emails.</p>
+                        <p><%= select_date(Time.now) %></p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div id="daily_email_modal" class="modal fade" role="dialog">
+                  <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Select A Time</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p>Please select what time you would like to receive your daily emails.</p>
+                        <p><%= select_time(Time.now) %></p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+          
             <h3>Text</h3>
-              <div class="form-group">
-                <%= f.radio_button(:sms_frequency, 1) %>
-                <%= f.label(:sms_frequency, "Weekly") %>
-              </div>     
-                    
-              <div class="form-group">
-                <%= f.radio_button(:sms_frequency, 0) %>
-                <%= f.label(:sms_frequency, "Daily") %>
-              </div> 
-          </div>   
+              <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#weekly_sms_modal">Weekly</button>
+              <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#daily_sms_modal">Daily</button>
+                <div id="weekly_sms_modal" class="modal fade" role="dialog">
+                  <div class="modal-dialog">
 
-          <%= f.submit "Update", class: "btn btn-default" %>
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Set Day & Time</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p>Please select the day and time you would like to receive your weekly text reminders.</p>
+                        <p><%= select_date(Time.now) %></p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+        <div class="form-group">
+          <br><p><%= f.submit "Update", class: "btn btn-default" %></p>
+        </div>
         <% end %>
     </div> 
   </div>     
