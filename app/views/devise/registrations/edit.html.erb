@@ -27,30 +27,7 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 <hr>
-  <h3>Register Your Phone Number</h3>
-  <div class="field">
-    <%= f.label :phone %> <i>(we need your current phone number to send your text reminders)</i><br />
-    <%= f.telephone_field(:phone) %>
-  </div>  
-<hr>
-  <h3>Set Your Reminder frequency</h3>
-  <h4>Email</h4>
-    <%= f.radio_button(:email_frequency, 1) %>
-    <%= f.label(:email_frequency, "Weekly") %><br />
-    <%= f.radio_button(:email_frequency, 0) %>
-    <%= f.label(:email_frequency, "Daily") %>
-  <h4>Text</h4>
-    <%= f.select :sms_frequency, ([
-                                    ["Sunday", 0], 
-                                    ["Monday", 1], 
-                                    ["Tuesday", 2],
-                                    ["Wednesday", 3], 
-                                    ["Thursday", 4], 
-                                    ["Friday", 5],
-                                    ["Saturday", 6]                                    
-                                  ]),{ :multiple => true }
-                                  %>           
-<br>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>

@@ -15,8 +15,10 @@
             <div class="container">
               <div class="carousel-caption">
                 <h1>Sprout</h1>
-                <h3>Plant the seeds of change</h3>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                <h2>Let your dreams take root</h2>
+                <% if !current_user %>
+                <p><%= link_to "Sign Up today", new_user_registration_path, class: "btn btn-lg btn-primary" %></p>
+                <% end %>
               </div>
             </div>
           </div>
@@ -24,8 +26,7 @@
             <img class="second-slide" src="http://brainsoftgroup.com/images/vision.png" alt="Second slide">
             <div class="container">
               <div class="carousel-caption">
-                <h1>Another example headline.</h1>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <h1>Create A Clear Vision of Your Ideal Destination</h1>
                 <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
               </div>
             </div>
@@ -34,8 +35,7 @@
             <img class="third-slide" src="http://brainsoftgroup.com/images/vision.png" alt="Third slide">
             <div class="container">
               <div class="carousel-caption">
-                <h1>One more for good measure.</h1>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <h1>Conquer The Challenges In Your Life</h3>
                 <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
               </div>
             </div>
@@ -59,8 +59,8 @@
   <div class="row featurette">
     <hr class="featurette-divider">
     <div class="col-md-7 success-story-1">
-      <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      <h2 class="featurette-heading">Lisa Smith<span class="text-muted">, Graduate Student</span></h2>
+      <p class="lead">"Sprout has not only helped me to achieve goals, but more importantly, it has enabled me to discover who I am, what makes me tick, and what those goals really are. Sprout was able to find the hidden treasures that allow me to achieve those goals."</p>
     </div>
     <div class="col-md-5">
       <img class="featurette-image img-responsive center-block" src="http://cdn1.theodysseyonline.com/files/2015/06/04/635690584083999001-1832628294_635683512724816093-1684666009_IMG_6834.imgopt500x65.JPG">
@@ -70,8 +70,8 @@
   <div class="row featurette">
     <hr class="featurette-divider">
     <div class="col-md-7 col-md-push-5 success-story-2">
-      <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      <h2 class="featurette-heading">Jane Doe<span class="text-muted">, Administrator</span></h2>
+      <p class="lead">"I'm so glad that I started this journey. In so many areas of my life I have been able to make huge strides. I have lost 30 pounds with the help of Sprout. Sprout reminded me of my values and coached me in a gentle but firm way. I am so grateful for all Sprout has done for me and I will be telling everyone who wants to achieve more (and even those who don't know they want to) about the difference using Sprout has made. My business has increased and is ever increasing. I am more confident than I have ever been. I feel I have moved mountains."</p>
     </div>
     <div class="col-md-5 col-md-pull-7">
       <img class="featurette-image img-responsive center-block" src="https://tttphotos.s3.amazonaws.com/production/uploads/user/profileimage/50815/largesquare_Headshot_in_Purple_flipped_face0.jpg">
@@ -81,8 +81,8 @@
   <div class="row featurette">
     <hr class="featurette-divider">
     <div class="col-md-7 success-story-3">
-      <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      <h2 class="featurette-heading">John Doe<span class="text-muted">, Physician</span></h2>
+      <p class="lead">"Sprout has helped me to identify issues that have stood in the way of business success and assisted me in developing techniques for working around or through these issues. As someone who has gone through substantial change in my professional career over the past couple of years, I count on sprout to ensure that this transition continues to go smoothly."</p>
     </div>
     <div class="col-md-5">
       <img class="featurette-image img-responsive center-block" src="http://cms.ipressroom.com.s3.amazonaws.com/214/files/20150/55414b67f6091d5fbf000002_Paliwal_Headshot_500px/Paliwal_Headshot_500px_mid.jpg" alt="Generic placeholder image">
@@ -90,52 +90,48 @@
     <hr class="featurette-divider">
   </div>
 <!-- /END THE FEATURETTES -->
-
+<hr>
 <!-- START COMPONENT SECTION -->
     <div class="row component-section">
     <!-- Three columns of text below the carousel -->
           <div class="col-md-6">
             <div class="component">
-              <img class="img-circle" src="https://s-media-cache-ak0.pinimg.com/originals/b9/9e/5f/b99e5f2520e899b679314e7f83617ab8.jpg" alt="Generic placeholder image" width="175" height="175">
-              <div id="description1" class="collapse">
-                <h3>Heading</h3>
-                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+              <img class="img-circle" src="http://indogermancropscience.com/images/vision.jpg" width="175" height="175">
+              <div>
+                <h3>Create Your Vision</h3>
+                <p class="lead">A vision that not only inspires you, makes you feel hopeful, and optimistic, but is also specific, clear, and enourmously effective.</p>
               </div>
-              <p><a class="btn btn-default" role="button" data-toggle="collapse" data-target="#description1">View details &raquo;</a></p>
             </div><!-- /.component -->  
 
           </div><!-- /.col-lg-6 -->
             <div class="col-md-6">
               <div class="component">
-              <img class="img-circle" src="https://s-media-cache-ak0.pinimg.com/originals/b9/9e/5f/b99e5f2520e899b679314e7f83617ab8.jpg" width="175" height="175">
-              <div id="description2" class="collapse">
-                <h3>Heading</h3>
-                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+              <img class="img-circle" src="http://www.kreativemines.com/uploads/PPC-Management-Services.png" width="175" height="175">
+              <div>
+                <h3>Conquer the Challenges In Your Life</h3>
+                <p class="lead">Gain a better sense of where you are and how to get there</p>
               </div>
-              <p><a class="btn btn-default" role="button" data-toggle="collapse" data-target="#description2">View details &raquo;</a></p>
             </div><!-- /.component -->              
           </div><!-- /.col-lg-6 -->
         </div>
         <div class="row component-section">
           <div class="col-md-6">
             <div class="component">
-              <img class="img-circle" src="https://s-media-cache-ak0.pinimg.com/originals/b9/9e/5f/b99e5f2520e899b679314e7f83617ab8.jpg" alt="Generic placeholder image" width="175" height="175">
-              <div id="description3" class="collapse">
-                <h3>Heading</h3>
-                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+              <img class="img-circle" src="https://www.anitian.com/wp-content/uploads/2015/05/chain.png" alt="Generic placeholder image" width="175" height="175">
+              <div>
+                <h3>Call In Your Strengths</h3>
+                <p class="lead">Cultivate confidence by finding your strengths, talents, and abilities.</p>
               </div>
-              <p><a class="btn btn-default" role="button" data-toggle="collapse" data-target="#description3">View details &raquo;</a></p>
             </div><!-- /.component --> 
           </div><!-- /.col-lg-6 -->
 
           <div class="col-md-6">
             <div class="component">
-              <img class="img-circle" src="https://s-media-cache-ak0.pinimg.com/originals/b9/9e/5f/b99e5f2520e899b679314e7f83617ab8.jpg" alt="Generic placeholder image" width="175" height="175">
-              <div id="description4" class="collapse">
-                <h3>Heading</h3>
-                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+              <img class="img-circle" src="http://www.horizonbaptist.com/hp_wordpress/wp-content/uploads/2014/08/grow.png" width="175" height="175">
+              <div>
+                <h3>Foster Positivity</h3>
+                <p class="lead">Positive emotions are the active ingredient in responding to adversity. </p>
               </div>
-              <p><a class="btn btn-default" role="button" data-toggle="collapse" data-target="#description4">View details &raquo;</a></p>
             </div><!-- /.component --> 
           </div><!-- /.col-lg-6 -->     
         </div><!--/.row component-description -->
