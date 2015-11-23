@@ -23,4 +23,5 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         )
      end
     user
+  end
 end
