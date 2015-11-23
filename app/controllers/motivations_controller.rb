@@ -35,7 +35,7 @@ class MotivationsController < ApplicationController
 
   def destroy
   	@motivation.destroy
-  	redirect_to motivation_path, notice: "Deleted successfully"
+  	redirect_to motivations_path, notice: "Deleted successfully"
   end
 
   private

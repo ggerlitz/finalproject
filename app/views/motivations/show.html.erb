@@ -1,6 +1,20 @@
 <div class="container">
-	<div class="col-md-5">
-		<%= render @motivation %>  
+
+  <div class="col-md-2">
+    <ul class="nav nav-sidebar nav-stacked">
+      <li><%= link_to "Vision", assessments_path %></li>
+      <li><%= link_to "Motivation", motivations_path %></li>
+      <li><%= link_to "Action Plan", user_path %></li>
+      <li><%= link_to "Account Settings", edit_user_registration_path %></li>
+      <li><%= link_to "Reminder Settings", reminders_path %></li>        
+    </ul>
+  </div>
+
+	<div class="col-md-6">
+		<%= render @motivation %> 
 	</div>
-	<%= link_to 'Back', motivations_path %>
+</div>
+<div class="container text-right">	
+	<%= link_to 'Edit', edit_motivation_path(@motivation), class: "btn btn-success btn-lg" %>
+	<%= link_to "Delete", motivation_path, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger btn-lg"  %>
 </div>

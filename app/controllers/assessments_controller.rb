@@ -19,7 +19,7 @@ class AssessmentsController < ApplicationController
     @user = current_user
     @assessment = Assessment.new(assessment_params)
     if @assessment.save
-      redirect_to current_user, notice: "Assessment completed successfully."
+      redirect_to new_motivation_path, notice: "Saved succcessfully."
       UserMailer.explore_assessment_email(@user).deliver_now
     else
       render :new

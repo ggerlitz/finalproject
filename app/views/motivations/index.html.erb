@@ -1,9 +1,19 @@
-<%= link_to 'Add New', new_motivation_path, class: "btn btn-success"%>
-<%= link_to "Back", user_path(current_user), class: "btn btn-success" %>
 <div class="container">
 	<div class="row">
-			<div class="col-md-6 col-md-offset-1">
-				<%= render @user.motivations %>
-			</div>
+		<div class="col-md-2">
+		  <ul class="nav nav-sidebar nav-stacked">
+		    <li><%= link_to "Vision", assessments_path %></li>
+		    <li><%= link_to "Motivation", motivations_path %></li>
+		    <li><%= link_to "Action Plan", @user %></li>
+		    <li><%= link_to "Account Settings", edit_user_registration_path %></li>
+		    <li><%= link_to "Reminder Settings", reminders_path %></li>        
+		  </ul>
 		</div>
+
+
+		<div class="col-md-6">
+			<%= render @user.motivations %>
+		</div>
+	</div>
 </div>
+

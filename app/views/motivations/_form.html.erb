@@ -3,9 +3,9 @@
 
     <p class="form-group"> 
       <%= f.label :title, "Upload an Image" %>
-		  <%= f.file_field :image, required: true, class: "form-control" %>
+		  <%= f.file_field :image, required: true, class: "form-control", id:"pictureInput" %>
   	</p>
-
+    <div class="form-group" id="target"></div>
     <p class="form-group"> 
       <%= f.label :title %><br>
       <%= f.text_field :title, class: "form-control" %>

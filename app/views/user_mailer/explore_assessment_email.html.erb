@@ -4,9 +4,10 @@
 	<title>Sprout</title>
 </head>
 <body>
-	<h1>Thank you <%= @current_user.first_name %> for signing up for Sprout</h1>
+	<h1>You've Started!</h1>
+	<h2>Great! You are on the road to success with Sprout. Thank you <%= @current_user.first_name %> for signing up</h2>
 	<h3>Sprout provides you with a reminder of what you are working towards.  It’s a handy tool to have when you encounter challenges and obstacles along the way. Pushing through barriers is easier when you have a visual reminder of why you are putting in the work!</h3>
-	<p>Please take a moment to review your this reminder and feel free to change it so it is the most helpful for you.</p>
+	<p>Please take a moment to review your goals.</p>
 	<p><%= @current_user.assessment.q1 %></p>
 </body>
 </html>

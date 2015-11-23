@@ -1,10 +1,18 @@
 <div class="container">
-	<div class="col-md-6 col-md-offset-3">
+
+  <div class="col-sm-2">
+    <ul class="nav nav-sidebar nav-stacked">
+      <li><%= link_to "Vision", assessments_path %></li>
+      <li><%= link_to "Motivation", motivations_path %></li>
+      <li><%= link_to "Action Plan", user_path %></li>
+      <li><%= link_to "Account Settings", edit_user_registration_path %></li>
+      <li><%= link_to "Reminder Settings", reminders_path %></li>        
+    </ul>
+  </div>
+
+	<div class="col-md-6 col-md-offset-2">
 		<h1 class="text-center">Edit</h1>
 			<p class="text-center"><%= image_tag @motivation.image.url(:medium) %></p>
 			<%= render 'form' %>
 	</div>	
-</div>	
-<div class="container">
-	<%= link_to "Cancel", motivations_path %>
 </div>	

@@ -4,8 +4,38 @@
 		<div class="col-md-8 col-md-offset-2">
 			<h1 class="text-center">Explore</h1>
 				<div class="questions">
-					<h3>Describe, in as much detail as possible, where do you see yourself 5 years from now.</h3>
-					<%= render 'form' %>	
+					<div class="q1">
+						<h3>Imagine that you have achieved your goal and are that successful version of yourself now. What can you see, hear and feel? – really associate yourself.</h3>
+
+						<p>Describe, in as much detail as possible what you are seeing.</p>
+						
+						<%= form_for @assessment do |f| %>
+							<% if @assessment.errors.any? %>
+								<div class="notice">
+								<p>There was a problem:</p>
+								<% @assessment.errors.full_messages.each do |msg| %>
+									<li><%= msg %></li>
+								<% end %>
+							<% end %>	
+
+							<p class="form-group">
+								<%= f.text_area :q1, size: "20x7", placeholder: "Where are you? What are you doing? Who is around you? Etc.", required: true, class: "form-control" %>
+							</p>
+
+					</div><!--/q1 -->					
+
+					<h3>Now visualize the steps you took to get there, including the point where you are now, making that initial decision.</h3> 
+
+					<p>Write down the steps you took</p>
+
+					<p class="form-group">
+						<%= f.text_area :q2, size: "20x7", required: true, class: "form-control" %>
+					</p>					
+
+					  <div class="form-group text-right">
+					    <%= f.submit "Save", class: "btn btn-success btn-lg" %>
+					  </div>
+					<% end %>
 				</div><!-- /questions -->
 			</div><!-- /col-sm-6 -->
 		</div><!-- /col-sm-8 -->	
