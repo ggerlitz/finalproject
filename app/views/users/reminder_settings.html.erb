@@ -5,7 +5,7 @@
           <h3>Register Your Phone Number</h3>
 
             <div class="form-group">
-              <%= f.label :phone %> <i>(we need your current phone number to send your text reminders)</i>
+              <%= f.label :phone %>
               <%= f.text_field :phone, class: "form-control" %>
             </div>  
           <h3>Set Your Reminder frequencies</h3>
@@ -77,6 +77,27 @@
 
                   </div>
                 </div>
+
+                <div id="daily_sms_modal" class="modal fade" role="dialog">
+                  <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Select A Time</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p>Please select what time you would like to receive your daily emails.</p>
+                        <p><%= select_time(Time.now) %></p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>                
         <div class="form-group">
           <br><p><%= f.submit "Update", class: "btn btn-default" %></p>
         </div>

@@ -28,7 +28,7 @@ namespace :sms_scheduler do
 		    client = Twilio::REST::Client.new ENV['TWILIO_APP_TEST_KEY'], ENV['TWILIO_TEST_TOKEN']
 		    client.messages.create(
 		      from: twilio_number,
-		      to: '+12489628305'te,
+		      to: '+12489628305',
 		      body: "Test",
 		      media_url: '<%= user.motivations.shuffle.first.image_file_name %>' 
 		    )    
